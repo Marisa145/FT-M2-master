@@ -54,13 +54,14 @@ ToDo.prototype.completeToDo = function(){                // Creo un metodo que e
 //    7) Agregar 'toDoText' como hijo de 'toDoShell'
 //    8) Devolver la variable toDoShell
 
+//--------la funcion arma un div que adentro tiene un span ------------------------------------------------------
 
 function buildToDo(todo, index) {
-  // Tu código acá:
+  // Tu código acá: contruye el tag
   var toDoShell = document.createElement('div') // para crear un nuevo elemento utilizamos el metodo document.createElement() y colocamos el elmento entre parentesis
    toDoShell.className= "toDoShell"  ;            // vamos a la variabley className (obtiene y establece el valor del atributo class del elemento especificado) y le seatmo el valor
-  var toDoText = document.createElement('span')
-  toDoText.innerHTML= todo.description
+  var toDoText = document.createElement('span')    // primero se crea la variable pra almacenar el nuevo elemento
+  toDoText.innerHTML= todo.description             //
   toDoText.id = index;
   
   if(todo.complete ){                             // si el atributo completed es verdadero 
@@ -123,7 +124,7 @@ function addToDo() {
   var newNodo = new ToDo(input.value)                                    // creamos una nueva clase pasand como argument el valor de la input
   toDoItems.push(newNodo)                                               // agrego el objeto al array
   input.value = "";                                                    // para que lo ques esta escrito se borre
-  displayToDos();                                                       // hace un refresh lo vuelve a actualizar
+  displayToDos();                                                       // hace un refresh lo vuelve a actualizar y lo cola en la pantalla
 
   
 
@@ -151,12 +152,12 @@ bts.addEventListener('click',addToDo)                    // creamos un event lis
 //   3) En la función 'buildToDo' agregar un 'click' event listener al elemento 'toDoText', pasándole
 //      esta función como callback
 
-function completeToDo(event) {
+function completeToDo(event) {                   
   // DESCOMENTAR LA SIGUIENTE LINEA
-   const index = event.target.id;
+   const index = event.target.id;                              // event = click ;target= span;  id= index
   // Tu código acá:
-  toDoItems[index].completeToDo();
-  displayToDos();
+  toDoItems[index].completeToDo();                             // agarramos nuestro array y accedemos al elemento index y le aplico el complet lo que rebibe en false lo cambia a true
+  displayToDos();                                              // para que se muestre en la pantalla
 
 }
 
@@ -173,6 +174,14 @@ function completeToDo(event) {
         e) Dentro del bloque 'if' de la función buildToDo, si es true, setear el atributo 'checked' en true en el checkbox
         f) Agregar el checkbox sobre el elemento 'toDoShell'
 */
+// Checkpoint :<input type="checkbox"> es un elemento de entrada que te permite insertar un vector o array de valores.
+// El atributo value es usado para definr el valor enviado por el checkbox. 
+function buildToDo(todo,index) {
+  var check = document.createElement('input')
+
+
+  
+}
 // ********************************************** ----------- ********************************************** //
 
 
