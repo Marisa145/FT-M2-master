@@ -1,1 +1,29 @@
 // Código de Nav acá
+nav{
+    // display:flex;
+    //flex-direction: column;
+    //aling-items: center;
+
+    .flex(column,center,center);  // lo cambie a mixins
+    background-color: @nav-bg;
+    border: @nav-border solid 2px;
+    padding-top: 10px;
+   
+    ul{
+        //dispaly: flex;
+        // justify-content: space-around
+       .flex(@justify: space-around);
+        width: 30%;
+        padding: 10px;
+//----------------
+     
+  }
+    
+    a{
+        text-decoration: none;
+        color: @nav-font;
+        font-weight: bold;
+    }
+  }
+
+  
